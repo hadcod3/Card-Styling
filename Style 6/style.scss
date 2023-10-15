@@ -1,0 +1,114 @@
+// ========== Global Settings
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255,0,232);
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, rgba(255,0,232,1) 0%, rgba(0,238,240,1) 52%, rgba(0,255,226,1) 100%);
+
+    .card{
+        position: relative;
+        width: 260px;
+        height: 260px;
+        padding: 20px;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.1);
+
+        &::before{
+            content: '';
+            inset: 10px;
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            background: white;
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .border{
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                background: conic-gradient(#D737ED, #4250ED, #4CC6F7, #7BF4F7, #D737ED);
+                z-index: -2;
+                filter: blur(10px);
+                animation: rotate 3s linear infinite;
+            }
+    
+            &::after{
+                content: '';
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                background: conic-gradient(#D737ED, #4250ED, #4CC6F7, #7BF4F7, #D737ED);
+                z-index: -3;
+                animation: rotate 3s linear infinite;
+            }
+        }
+        
+        span{
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        // Deletable style
+        .skeleton-content{
+            width: 100%;
+            height: 100%;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+    
+            span{
+                width: 85%;
+                height: 20px;
+                border-radius: 20px;
+                background: #F5F5F5;
+    
+                &:nth-child(2){
+                    width: 70%;
+                }
+    
+                &:nth-child(3){
+                    width: 40%;
+                }
+    
+                &:nth-child(4){
+                    width: 60%;
+                }
+    
+                &:nth-child(5){
+                    width: 20%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+// ========== Google Font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// ========== Global Settings
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255,0,232);
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, rgba(255,0,232,1) 0%, rgba(0,238,240,1) 52%, rgba(0,255,226,1) 100%);
+
+    .card{
+        position: relative;
+        width: 400px;
+        height: 200px;
+        border-radius: 0 30px 30px 0;
+        background: white;
+        padding: 20px;
+
+        .header-card, .footer-card{
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 50px;
+            background: white;
+            padding: 0 20px 0 20px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+            gap: 20px;
+
+            span{
+                cursor: pointer;
+            }
+
+            &::after{
+                content: '';
+                width: 60px;
+                height: 40px;
+                background: white;
+                right: -50px;
+                bottom: -2px;
+                position: absolute;
+                box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.1);
+                -webkit-mask: radial-gradient(80px at 114% -96%,#0000 99%, #000);
+                        mask: radial-gradient(80px at 114% -96%,#0000 99%, #000);
+                z-index: -1;
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.1);
+                border-radius: inherit;
+                z-index: -3;
+            }
+        }
+
+        .header-card{
+            top: -50px;
+            border-radius: 30px 40px 0 0;
+            font-weight: 600;
+        }
+
+        .footer-card{
+            bottom: -50px;
+            border-radius: 0 0 40px 30px;
+
+            &::after{
+                top: -2px;
+                transform: rotateX(180deg);
+            }
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.1);
+            border-radius: inherit;
+        }
+    
+        // Deletable style
+        .skeleton-content{
+            width: 100%;
+            height: 100%;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+    
+            span{
+                width: 85%;
+                height: 20px;
+                border-radius: 20px;
+                background: #F5F5F5;
+    
+                &:nth-child(2){
+                    width: 70%;
+                }
+    
+                &:nth-child(3){
+                    width: 40%;
+                }
+    
+                &:nth-child(4){
+                    width: 60%;
+                }
+    
+                &:nth-child(5){
+                    width: 20%;
+                }
+            }
+        }
+    }
+}
